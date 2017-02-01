@@ -1,0 +1,12 @@
+.form-control{
+    width: 95px;
+}
+form{
+    display: inline-block;
+    border-right: 1px solid green;
+    margin: 10px 10px;
+    padding-right: 10px;
+}
+.department{
+    display: inline-block;
+}
