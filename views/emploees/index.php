@@ -46,12 +46,12 @@
 					<tbody>
 						<?php foreach ($emploeeList as $emploee) : ?>
 						<tr>
-							<td><?php echo $emploee['name'] ?></td>
-							<td><?php echo $emploee['birthday'] ?></td>
-							<td><?php echo $emploee['department'] ?></td>
-							<td><?php echo $emploee['position'] ?></td>
-							<td><?php echo $emploee['payment'] ?></td>
-							<td><?php echo $emploee['cost'] ?></td>
+							<td><?php echo $emploee->name() ?></td>
+							<td><?php echo $emploee->birthday() ?></td>
+							<td><?php echo $emploee->department() ?></td>
+							<td><?php echo $emploee->position() ?></td>
+							<td><?php echo $emploee->payment() ?></td>
+							<td><?php echo $emploee->cost() ?></td>
 						</tr>
 						<?php endforeach; ?>
 					</tbody>

@@ -7,11 +7,9 @@ class Router
 
     private $routes;
 
-    public function __construct()
+    public function __construct(array $config)
     {
-        $routesPath = '/config/routes.php';
-
-        $this->routes = include ($routesPath);
+        $this->routes = $config;
     }
 
     private function getURI(){

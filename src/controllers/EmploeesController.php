@@ -17,9 +17,8 @@ class EmploeesController
         $db=Db::getConnection();
 
         $count_show_pages=2;
-        $result2=$db->query("SELECT id FROM emploee");
-        $num = $result2->rowCount();
-        $count_pages=ceil($num/$limit);
+        $result2=$db->query("SELECT COUNT(id) FROM emploee")->fetchColumn();
+        $count_pages=ceil($result2/$limit);
         $count_pages++;
         if ($page>$count_pages) $page = 1;
         if (!isset($offset)) $offset=0;
@@ -49,7 +48,9 @@ class EmploeesController
         
         $db=Db::getConnection();
         $count_show_pages=2;
-        $result2=$db->query("SELECT id FROM emploee WHERE department='$department'");
+        $result2=$db->prepare("SELECT id FROM emploee WHERE department= :department");
+        $result2->bindValue(':department', (string) $department, \PDO::PARAM_STR);
+        $result2->execute();
         $num = $result2->rowCount();
         $count_pages=ceil($num/$limit);
         $count_pages++;

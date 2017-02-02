@@ -11,5 +11,5 @@ namespace Roma\MVC\models;
 
 interface Emploee
 {
-    public static function getCost($cost);
+    public function cost();
 }
