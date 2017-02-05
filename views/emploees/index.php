@@ -9,7 +9,7 @@
 		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	</head>
 <body>
-	<form method="post" action="http://mvc/emploees/">
+	<form method="post" action="/emploees/">
 		<p>Количество сотрудников для показа:</p>
 		<select name="limit" class="form-control">
 			<option>20</option>
@@ -19,7 +19,7 @@
 		</select>
 		<p><input type="submit" value="Отправить" class="btn btn-default"></p>
 	</form>
-	<form class="department" method="post" action="http://mvc/emploees/department">
+	<form class="department" method="post" action="/emploees/department">
 		<p>Для вывода сотрудников по отделам, выберите отдел:</p>
 		<select name="department" class="form-control">
 			<option>it</option>
@@ -62,22 +62,22 @@
 
 		<?php //PAGINATION
 		if ($page>=1) {
-			echo '<a href="http://mvc/emploees/1/' . $limit .'"><<</a> &nbsp; ';
-			echo '<a href="http://mvc/emploees/' . $page . '/'. $limit .
+			echo '<a href="/emploees/1/' . $limit .'"><<</a> &nbsp; ';
+			echo '<a href="/emploees/' . $page . '/'. $limit .
 				'">< </a> &nbsp; ';
 		}
 		for ($j = 1; $j<$count_pages; $j++) {
 			if ($j>=$start && $j<=$end) {
-				if ($j==($page+1)) echo '<a href="http://mvc/emploees/' . $j . '/' . $limit .'"><strong style="color: #df0000">' . $j .
+				if ($j==($page+1)) echo '<a href="/emploees/' . $j . '/' . $limit .'"><strong style="color: #df0000">' . $j .
 					'</strong></a> &nbsp; ';
-				else echo '<a href="http://mvc/emploees/' .
+				else echo '<a href="/emploees/' .
 					$j . '/' . $limit .'">' . $j . '</a> &nbsp; ';
 			}
 		}
 		if ($j>$page && ($page+2)<$j) {
-			echo '<a href="http://mvc/emploees/' . ($page+2) .'/' . $limit .
+			echo '<a href="/emploees/' . ($page+2) .'/' . $limit .
 				'"> ></a> &nbsp; ';
-			echo '<a href="http://mvc/emploees/' . ($j-1) .'/' . $limit .
+			echo '<a href="/emploees/' . ($j-1) .'/' . $limit .
 				'">>></a> &nbsp; ';
 		}
 		?>
